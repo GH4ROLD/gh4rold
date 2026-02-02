@@ -13,7 +13,7 @@ As a **Music Professor** turned **Game Audio Developer** based in Chile 🇨🇱
 
 | **Game Engines & Language** | **Audio Middleware & DAW** | **Version Control** |
 | :--- | :--- | :--- |
-| ![Unity](https://img.shields.io/badge/Unity-2022.x-black?style=flat&logo=unity&logoColor=white) | ![Ableton](https://img.shields.io/badge/Ableton_Live-11-black?style=flat&logo=abletonlive&logoColor=white) | ![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat&logo=git&logoColor=white) |
+| ![Unity](https://img.shields.io/badge/Unity-2022.x-black?style=flat&logo=unity&logoColor=white) | ![Ableton](https://img.shields.io/badge/Ableton_Live-12-black?style=flat&logo=abletonlive&logoColor=white) | ![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat&logo=git&logoColor=white) |
 | ![C#](https://img.shields.io/badge/C%23-Scripting-239120?style=flat&logo=c-sharp&logoColor=white) | ![Wwise](https://img.shields.io/badge/Wwise-Middleware-blue?style=flat) | ![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat&logo=github&logoColor=white) |
 
 ---
