@@ -1,36 +1,54 @@
 ### Hi there, I'm Harold Justiniano 👋
-#### Composer | Sound Designer | Technical Audio Implementer
+#### 🔊 Technical Audio Designer | Composer | Unity Developer
 
-I am a **Music Professor** turned **Game Audio Developer** from Chile. I specialize in creating immersive soundscapes and implementing them directly into game engines, bridging the gap between art and code.
+I bridge the gap between **Musical Artistry** and **Game Logic**. 
+As a **Music Professor** turned **Game Audio Developer** based in Chile 🇨🇱, I specialize in designing immersive adaptive audio systems and implementing them directly into game engines.
 
-- 🔭 I’m currently working on: **Global Game Jam 2026 Project**
-- 🌱 I’m currently learning: **Wwise Middleware & Unreal Engine 5**
-- 🎮 Engine of choice: **Godot 4.x**
-- 🎵 Main Genre: **Lofi / Bossa Nova / Ambient**
-
----
-
-### 🛠️ Tech Stack & Tools
-
-![Godot Engine](https://img.shields.io/badge/GODOT-%23FFFFFF.svg?style=for-the-badge&logo=godot-engine&logoColor=478cbf)
-![Reaper](https://img.shields.io/badge/REAPER-1155cc?style=for-the-badge&logo=reaper&logoColor=white)
-![Wwise](https://img.shields.io/badge/Wwise-Learning-yellow?style=for-the-badge)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![GDScript](https://img.shields.io/badge/GDScript-478cbf?style=for-the-badge&logo=godot-engine&logoColor=white)
+- 🔭 **Current Focus:** Developing a dynamic audio system for a psychological horror game using **Wwise + Godot**.
+- 💡 **Core Philosophy:** Audio shouldn't just be heard; it should react to gameplay.
 
 ---
 
-### 🎧 Implementation Showcase
+### 🛠️ Technical Arsenal
 
-Here is how I organize my audio logic in Godot:
+| **Game Engines** | **Audio Middleware & DAW** | **Tools & Scripting** |
+| :--- | :--- | :--- |
+| ![Godot Engine](https://img.shields.io/badge/Godot_4.x-%23FFFFFF.svg?style=flat&logo=godot-engine&logoColor=478cbf) | ![Wwise](https://img.shields.io/badge/Wwise-Learning-yellow?style=flat) | ![GDScript](https://img.shields.io/badge/GDScript-478cbf?style=flat&logo=godot-engine&logoColor=white) |
+| ![Unreal Engine](https://img.shields.io/badge/Unreal_5-Learning-black?style=flat&logo=unrealengine&logoColor=white) | ![Reaper](https://img.shields.io/badge/REAPER-Scripting-1155cc?style=flat&logo=reaper&logoColor=white) | ![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=flat&logo=git&logoColor=white) |
+
+---
+
+### 🚀 Selected Projects
+
+| Project | Role | Audio Tech Stack |
+| :--- | :--- | :--- |
+| **Global Game Jam 2026 Entry** | *Technical Audio Lead* | Godot 4 • Adaptive Music Layers |
+| **Psychological Horror Title** *(In Development)* | *Sound Designer / Implementer* | Godot 4 • Wwise • Spatial Audio |
+| **Exotico Records** | *Co-Founder / Producer* | Label Management • Lofi Production |
+
+---
+
+### 💻 Implementation Showcase: Adaptive Audio in Godot
+
+I write clean, modular GDScript to handle complex audio transitions. Here is a snippet of a **Dynamic Music Manager** using Tweens for smooth crossfading based on game states:
 
 ```gdscript
-# Example of how I handle Dynamic Music transitions
-func change_music_intensity(intensity_level):
-    var tween = create_tween()
-    if intensity_level == "High":
-        tween.tween_property($MusicPlayer/BattleLayer, "volume_db", 0.0, 1.0)
-        tween.tween_property($MusicPlayer/CalmLayer, "volume_db", -80.0, 1.0)
-    else:
-        tween.tween_property($MusicPlayer/BattleLayer, "volume_db", -80.0, 1.0)
-        tween.tween_property($MusicPlayer/CalmLayer, "volume_db", 0.0, 1.0)
+extends Node
+
+const FADE_TIME: float = 2.0
+const VOL_ON: float = 0.0
+const VOL_OFF: float = -80.0
+
+# Switches track layers based on gameplay intensity (Exploration vs Combat)
+func set_music_state(state: String) -> void:
+	var tween = create_tween().set_parallel(true)
+	
+	match state:
+		"COMBAT":
+			# Smoothly bring in percussion/high energy layers
+			tween.tween_property($Layers/Percussion, "volume_db", VOL_ON, FADE_TIME)
+			tween.tween_property($Layers/Ambience, "volume_db", -10.0, FADE_TIME)
+		"EXPLORATION":
+			# Revert to ambient textures
+			tween.tween_property($Layers/Percussion, "volume_db", VOL_OFF, FADE_TIME)
+			tween.tween_property($Layers/Ambience, "volume_db", VOL_ON, FADE_TIME)
